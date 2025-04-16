@@ -106,6 +106,24 @@ func (l *AuthorizationServerList) GetItems() []resource.Managed {
 	return items
 }
 
+// GetItems of this AzureAPIMGroupList.
+func (l *AzureAPIMGroupList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
+// GetItems of this AzureAPIMProductGroupList.
+func (l *AzureAPIMProductGroupList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
 // GetItems of this BackendList.
 func (l *BackendList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))

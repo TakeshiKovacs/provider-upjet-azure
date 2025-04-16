@@ -65,6 +65,27 @@ func Configure(p *config.Provider) {
 			TerraformName: "azurerm_api_management",
 		}
 	})
+	// My Change
+	p.AddResourceConfigurator("azurerm_api_management_group", func(r *config.Resource) {
+		r.Kind = "AzureAPIMGroup"
+		r.References["api_management_name"] = config.Reference{
+			TerraformName: "azurerm_api_management",
+		}
+	})
+
+	p.AddResourceConfigurator("azurerm_api_management_product_group", func(r *config.Resource) {
+		r.Kind = "AzureAPIMProductGroup"
+		r.References["group_name"] = config.Reference{
+			TerraformName: "azurerm_api_management_group",
+		}
+		r.References["product_id"] = config.Reference{
+			TerraformName: "azurerm_api_management_product",
+		}
+		r.References["api_management_name"] = config.Reference{
+			TerraformName: "azurerm_api_management",
+		}
+	})
+	// End of My Change
 	p.AddResourceConfigurator("azurerm_api_management_subscription", func(r *config.Resource) {
 		r.References["user_id"] = config.Reference{
 			TerraformName: "azurerm_api_management_user",

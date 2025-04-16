@@ -26,6 +26,8 @@ import (
 	apitag "github.com/upbound/provider-azure/internal/controller/apimanagement/apitag"
 	apiversionset "github.com/upbound/provider-azure/internal/controller/apimanagement/apiversionset"
 	authorizationserver "github.com/upbound/provider-azure/internal/controller/apimanagement/authorizationserver"
+	azureapimgroup "github.com/upbound/provider-azure/internal/controller/apimanagement/azureapimgroup"
+	azureapimproductgroup "github.com/upbound/provider-azure/internal/controller/apimanagement/azureapimproductgroup"
 	backend "github.com/upbound/provider-azure/internal/controller/apimanagement/backend"
 	certificate "github.com/upbound/provider-azure/internal/controller/apimanagement/certificate"
 	customdomain "github.com/upbound/provider-azure/internal/controller/apimanagement/customdomain"
@@ -777,6 +779,8 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		apitag.Setup,
 		apiversionset.Setup,
 		authorizationserver.Setup,
+		azureapimgroup.Setup,
+		azureapimproductgroup.Setup,
 		backend.Setup,
 		certificate.Setup,
 		customdomain.Setup,

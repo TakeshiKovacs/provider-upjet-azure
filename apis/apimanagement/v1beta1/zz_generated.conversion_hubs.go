@@ -31,6 +31,12 @@ func (tr *APIVersionSet) Hub() {}
 func (tr *AuthorizationServer) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *AzureAPIMGroup) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *AzureAPIMProductGroup) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *Certificate) Hub() {}
 
 // Hub marks this type as a conversion hub.
