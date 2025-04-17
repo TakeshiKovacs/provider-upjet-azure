@@ -42,6 +42,7 @@ import (
 	policy "github.com/upbound/provider-azure/internal/controller/apimanagement/policy"
 	product "github.com/upbound/provider-azure/internal/controller/apimanagement/product"
 	productapi "github.com/upbound/provider-azure/internal/controller/apimanagement/productapi"
+	productgroup "github.com/upbound/provider-azure/internal/controller/apimanagement/productgroup"
 	productpolicy "github.com/upbound/provider-azure/internal/controller/apimanagement/productpolicy"
 	producttag "github.com/upbound/provider-azure/internal/controller/apimanagement/producttag"
 	rediscache "github.com/upbound/provider-azure/internal/controller/apimanagement/rediscache"
@@ -87,6 +88,7 @@ func Setup_apimanagement(mgr ctrl.Manager, o controller.Options) error {
 		policy.Setup,
 		product.Setup,
 		productapi.Setup,
+		productgroup.Setup,
 		productpolicy.Setup,
 		producttag.Setup,
 		rediscache.Setup,

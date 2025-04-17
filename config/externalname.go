@@ -112,6 +112,9 @@ var TerraformPluginSDKExternalNameConfigs = map[string]config.ExternalName{
 	// API Management Product Policy can be imported using the resource id
 	// /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.ApiManagement/service/service1/products/exampleId/policies/policy
 	"azurerm_api_management_product_policy": config.TemplatedStringAsIdentifier("", "/subscriptions/{{ .setup.configuration.subscription_id }}/resourceGroups/{{ .parameters.resource_group_name }}/providers/Microsoft.ApiManagement/service/{{ .parameters.api_management_name }}/products/{{ .parameters.product_id }}"),
+	// API Management Product Group can be imported using the resource id:
+	// /subscriptions/<sub>/resourceGroups/<rg>/providers/Microsoft.ApiManagement/service/service1/products/exampleId/groups/group-name
+	"azurerm_api_management_product_group": config.TemplatedStringAsIdentifier("group_name", "/subscriptions/{{ .setup.configuration.subscription_id }}/resourceGroups/{{ .parameters.resource_group_name }}/providers/Microsoft.ApiManagement/service/{{ .parameters.api_management_name }}/products/{{ .parameters.product_id }}/groups/{{ .external_name }}"),
 	// API Management Redis Caches can be imported using the resource id
 	// /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group1/providers/Microsoft.ApiManagement/service/service1/caches/cache1
 	"azurerm_api_management_redis_cache": config.TemplatedStringAsIdentifier("name", "{{ .parameters.api_management_id }}/caches/{{ .external_name }}"),

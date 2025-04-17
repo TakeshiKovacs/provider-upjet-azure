@@ -64,7 +64,6 @@ var skipList = []string{
 	"azurerm_mssql_server_extended_auditing_policy",
 	// group prefix collision
 	"azurerm_api_management_group",
-	"azurerm_api_management_product_group",
 	"azurerm_dedicated_host_group",
 	"azurerm_storage_disks_pool",
 	"azurerm_storage_sync_group",
